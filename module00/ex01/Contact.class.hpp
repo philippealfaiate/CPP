@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:42:35 by phialfai          #+#    #+#             */
-/*   Updated: 2023/08/30 16:08:12 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/08/31 23:40:44 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ public:
 	void	setNickname(char *value);
 	void	setPhonenumber(char *value);
 	void	setDarkestsecret(char *value);
-
-
 };
 
 #endif

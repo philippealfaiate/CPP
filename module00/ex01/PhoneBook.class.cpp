@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:36:56 by phialfai          #+#    #+#             */
-/*   Updated: 2023/08/31 00:40:50 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/01 00:55:01 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 PhoneBook::PhoneBook( void ) {
 	
 	// Do Something
+	header();
+	std::cout << "Welcome to the best PhoneBook 80's application" << std::endl;
+	helper();
 	return;
 }
 
@@ -30,7 +33,8 @@ PhoneBook::~PhoneBook( void ) {
 void	PhoneBook::add ( void ) {
 
 	std::string	value;
-	Contact		contact;
+
+	
 
 	value = "";
 	// Do Something
@@ -59,15 +63,32 @@ void	PhoneBook::add ( void ) {
 	return;
 }
 
-void	PhoneBook::search ( void ) {
+void	PhoneBook::search ( void ) const {
+	int	id;
+
+	// Do Something
+	std::cout << "(select an index or type enter to go back to the main menu)" << std::endl;
+	std::cin >> id;
+
+	
+	
+	return;
+}
+
+
+void	PhoneBook::print ( void ) const {
 
 	// Do Something
 	return;
 }
 
 
-void	PhoneBook::exit ( void ) {
+// /**  */
+// void	PhoneBook::set_index( void ) {
+// 	this->_index++;
+// }
 
-	// Do Something
-	return;
-}
+// /**  */
+// int		PhoneBook::get_index( void ) const {
+// 	return this->_index % 8;
+// }
