@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:09:58 by phialfai          #+#    #+#             */
-/*   Updated: 2023/08/30 19:30:56 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/01 09:53:16 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 #include "Child.class.hpp"
 
 Parent::Parent ( void ) {
-	
+
+	this->id = 0;	
+
+
 	std::string	name;
 
 	std::cout << "*** Parent class constructed ***" << std::endl;
@@ -51,5 +54,12 @@ Parent::~Parent ( void ) {
 
 	std::cout << "Parent class destructed" << std::endl;
 	return ;
+}
+
+void	Parent::addChild( std::string name, int age ) {
+	instanceChild[id % 3].Child(name, age);	
+	std::cout << "ID: " << id % 3 << std::flush;
+	std::cout << " Child name: " << instanceChild[id % 3].getName() << std::endl;
+	id++;
 }
 

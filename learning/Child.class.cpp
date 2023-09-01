@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:09:58 by phialfai          #+#    #+#             */
-/*   Updated: 2023/08/30 19:19:11 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/01 09:53:38 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,34 @@
 #include <iostream>
 #include "Child.class.hpp"
 
-Child::Child( void ) {
+// Child::Child( void ) {
 
-	std::cout << "Child class constructed" << std::endl;
+// 	std::cout << "Child class constructed" << std::endl;
+// 	// Do Something
+
+// 	return ;
+// }
+
+Child::Child( std::string name, int age ) {
+
+	std::cout << "Child( ... ) class constructed" << std::endl;
 	// Do Something
+	this->_name = name;
+	this->_age = age;
 
 	return ;
 }
+
 
 Child::~Child( void ) {
 
 	// Do Something
 
-	std::cout << "Child class destructed" << std::endl;
+	std::cout << "Child class destructed " << this->_name << std::endl;
 	return ;
 }
+
+
 
 std::string		Child::getName( void ) const {
 	return this->_name;
@@ -36,4 +49,12 @@ std::string		Child::getName( void ) const {
 
 void	Child::setName( std::string name ) {
 	this->_name = name;
+}
+
+int		Child::getAge( void ) const {
+	return this->_age;
+}
+
+void	Child::setAge( int age ) {
+	this->_age = age;
 }
