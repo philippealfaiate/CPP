@@ -6,21 +6,13 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:09:58 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/01 09:53:38 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/02 14:17:00 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <iostream>
 #include "Child.class.hpp"
-
-// Child::Child( void ) {
-
-// 	std::cout << "Child class constructed" << std::endl;
-// 	// Do Something
-
-// 	return ;
-// }
 
 Child::Child( std::string name, int age ) {
 
@@ -33,7 +25,7 @@ Child::Child( std::string name, int age ) {
 }
 
 
-Child::~Child( void ) {
+Child::~Child() {
 
 	// Do Something
 

@@ -5,39 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 16:09:58 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/02 14:16:47 by phialfai         ###   ########.fr       */
+/*   Created: 2023/09/04 11:03:51 by phialfai          #+#    #+#             */
+/*   Updated: 2023/09/04 16:35:07 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CHILD_CLASS_H
 # define CHILD_CLASS_H
 
-class Child {
+# include <string>
 
-	private:
+	class Child
+	{
 
-		std::string	_name;
-		int			_age;
+		public:
 
-	public:
+			Child();
+			~Child();
 
-		Child () = delete;
-		Child (std::string name, int age);
-		~Child ();
+			void	setFirstName();
+			void	setLastName();
+			void	setAge();
 
-		std::string		getName( void ) const;
-		void			setName( std::string name );
+			void	print() const;
+			
+			std::string	getName() const;
+			std::string	getAge() const;
 
-		int				getAge( void ) const;
-		void			setAge( int age );
+			void	add();
 
-		void create(std::string name, int age)
-		{
-			this->setName(name);
-			this->setAge(age);
-			return;
-		}
-};
+		private:
+
+			std::string	_first_name;
+			std::string	_last_name;
+			std::string	_age;
+
+			void	label(std::string value) const;
+
+	};
 
 #endif

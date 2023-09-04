@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:09:58 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/01 09:53:16 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/02 11:25:41 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ Parent::~Parent ( void ) {
 }
 
 void	Parent::addChild( std::string name, int age ) {
-	instanceChild[id % 3].Child(name, age);	
+	
+	if (!instanceChild[id % 3].getName().empty())
+		std::cout << "Contact " << instanceChild[id % 3].getName() << " replaced by new contact " << name << std::endl;
+	
+	instanceChild[id % 3].create(name, age);
 	std::cout << "ID: " << id % 3 << std::flush;
 	std::cout << " Child name: " << instanceChild[id % 3].getName() << std::endl;
 	id++;
