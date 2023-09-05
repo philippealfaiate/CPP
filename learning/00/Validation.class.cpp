@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:26:24 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 01:27:36 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:45:22 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ Validation::Validation()
 
 Validation& Validation::check(std::string value)
 {
-	this->_is_valid = 1;
+	this->_is_valid = 1;	//! obso
 	this->_value = value;
+	this->_err_msg.clear();
 	return *this;
 }
 
@@ -31,9 +32,8 @@ int	Validation::get() const
 	return this->_is_valid;
 }
 
-void	Validation::err_msg(std::string msg) const
-{
-	std::cout << "\033[0;31mError: " << msg << "\033[0m";
+std::string	Validation::getErrMsg() const {
+	return this->_err_msg;
 }
 
 Validation& Validation::isNotEmpty()
@@ -41,28 +41,39 @@ Validation& Validation::isNotEmpty()
 	if (this->_value.empty())
 	{
 		this->_is_valid = 0;
-		this->_msg = "can't be empty";
-		this->err_msg("can't be empty");
+		this->_err_msg = "can't be empty";
 	}
 	return *this;
 }
 
+
+/**
+ * https://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c
+*/
 Validation& Validation::isNumeric()
 {
-	if (!std::all_of(this->_value.begin(), this->_value.end(), ::isdigit))
+	std::string::iterator it = this->_value.begin();	
+	while (it != this->_value.end())
 	{
-		this->_is_valid = 0;
-		this->err_msg("should be numeric");
+		if (!std::isdigit(*it))
+		{
+			this->_is_valid = 0;
+			this->_err_msg = "should be numeric";
+		}
+		++it;
 	}
 	return *this;
 }
 
+/**
+ * https://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c
+*/
 Validation& Validation::isAlnum()
 {
-	if (!std::all_of(this->_value.begin(), this->_value.end(), ::isalnum))
-	{
-		this->_is_valid = 0;
-		this->err_msg("should be alphanumeric");
-	}
+	// if (!std::all_of(this->_value.begin(), this->_value.end(), ::isalnum))
+	// {
+	// 	this->_is_valid = 0;
+	// 	this->err_err_msg("should be alphanumeric");
+	// }
 	return *this;
 }

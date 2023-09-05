@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Validation.class.hpp                               :+:      :+:    :+:   */
+/*   Ui.class.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 15:26:24 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:43:01 by phialfai         ###   ########.fr       */
+/*   Created: 2023/09/05 12:23:02 by phialfai          #+#    #+#             */
+/*   Updated: 2023/09/05 13:39:06 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include <iostream>
 
-class Validation {
+class Ui
+{
 
 	public:
-		Validation();
 
-		int			get() const;
-		std::string	getErrMsg() const;
-	
-		Validation& check(std::string value);
-		Validation& isNotEmpty();
-		Validation& isNumeric();
-		Validation& isAlnum();
-		Validation& isSpace();
+		Ui();
+		~Ui();
+		void	clearScreen() const;
+		void	prompt() const;
+		void	header() const;
+		void	label(std::string value, std::string err_msg = 0) const;
 
 	private:
-		int			_is_valid;
-		std::string	_err_msg;
-		std::string	_value;
+		void	printError(std::string msg) const;
 
 };

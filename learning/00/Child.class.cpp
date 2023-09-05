@@ -6,26 +6,14 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:05:49 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 01:31:39 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:44:26 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Child.class.hpp"
 #include "Validation.class.hpp"
-
-void	clear_screen( void )
-{
-	std::cout << "\x1b[H\x1b[J" << std::flush;
-	return ;
-}
-
-void	prompt( void )
-{
-	std::cout << std::endl << "\033[1;33m$> \033[0m" << std::flush;
-	return ;
-}
-
+#include "Ui.class.hpp"
 
 Child::Child() {
 	std::cout << "Child Constucteur: " << this << std::endl;
@@ -36,51 +24,18 @@ Child::~Child() {
 }
 
 /** */
-void	Child::setFirstName() {
-	Validation	validate;
-	while (1)
-	{
-		clear_screen();
-		this->label("First Name: ");
-		std::getline(std::cin, this->_first_name);
-		if (std::cin.good() && validate.check(this->_first_name).isNotEmpty().get())
-			break;
-	}
+void	Child::setFirstName(std::string value) {
+	this->_first_name = value;
 }
 
 /** */
-void	Child::setLastName() {
-	Validation	validate;
-	while (1)
-	{
-		clear_screen();
-		this->label("Last Name: ");
-		if (!validate.get())
-			std::cout << "\033[0;31mError: " << validate._msg << "\033[0m";
-		prompt();
-		std::getline(std::cin, this->_last_name);
-		if (std::cin.good() && validate.check(this->_last_name).isNotEmpty().get())
-			break;
-	}
+void	Child::setLastName(std::string value) {
+	this->_last_name = value;
 }
 
 /** */
-void	Child::setAge() {
-	Validation	validate;
-	while (1)
-	{
-		clear_screen();
-		this->label("Age: ");
-		std::getline(std::cin, this->_age);
-		if (std::cin.good() && validate.check(this->_age).isNotEmpty().isNumeric().get())
-			break;
-	}
-}
-
-/** */
-void	Child::label(std::string value) const
-{
-	std::cout << value << std::flush;
+void	Child::setAge(std::string value) {
+	this->_age = value;
 }
 
 std::string	Child::getName() const {
@@ -100,13 +55,70 @@ void	Child::print() const {
 
 void	Child::add() {
 
-	std::cout << "Adding a new child instance ..." << std::endl;
-	this->setFirstName();
+	Ui			ui;
+	Validation	validate;
+	std::string	value;
+
+	// First Name
+	while(1)
+	{
+		ui.clearScreen();
+		ui.header();
+		ui.label("First Name: ", validate.getErrMsg());
+		// if (!validate.get())
+		// 	ui.printError(validate.getErrMsg());
+		ui.prompt();
+		std::getline(std::cin, value);
+		if (std::cin.good() && validate.check(value).isNotEmpty().get())
+		{
+			this->setFirstName(value);
+			value.clear();
+			break;
+		}
+	}
+
+	// last Name
+	while(1)
+	{
+		ui.clearScreen();
+		ui.header();
+		ui.label("Last Name: ", validate.getErrMsg());
+		// if (!validate.get())
+		// 	ui.printError(validate.getErrMsg());
+		ui.prompt();
+		std::getline(std::cin, value);
+		if (std::cin.good() && validate.check(value).isNotEmpty().get())
+		{
+			this->setLastName(value);
+			value.clear();
+			break;
+		}
+	}
+	
+
+	// Age
+	while(1)
+	{
+		ui.clearScreen();
+		ui.header();
+		ui.label("Age: ", validate.getErrMsg());
+		// if (!validate.get())
+		// 	ui.printError(validate.getErrMsg());
+		ui.prompt();
+		std::getline(std::cin, value);
+		if (std::cin.good() && validate.check(value).isNotEmpty().isNumeric().get())
+		{
+			this->setAge(value);
+			value.clear();
+			break;
+		}
+	}
+
 	std::cout << std::endl;
-	this->setLastName();
-	std::cout << std::endl;
-	this->setAge();
-	std::cout << std::endl;
-	this->print();
+	// this->setLastName();
+	// std::cout << std::endl;
+	// this->setAge();
+	// std::cout << std::endl;
+	// this->print();
 
 };

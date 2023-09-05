@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:03:51 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/04 16:35:07 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:26:26 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 			Child();
 			~Child();
 
-			void	setFirstName();
-			void	setLastName();
-			void	setAge();
+			void	setFirstName(std::string value);
+			void	setLastName(std::string value);
+			void	setAge(std::string value);
 
 			void	print() const;
 			
@@ -40,8 +40,6 @@
 			std::string	_first_name;
 			std::string	_last_name;
 			std::string	_age;
-
-			void	label(std::string value) const;
 
 	};
 
