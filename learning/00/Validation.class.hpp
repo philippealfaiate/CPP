@@ -6,29 +6,35 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:26:24 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:43:01 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:55:33 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef VALIDATION_H
+#define VALIDATION_H
 
-class Validation {
+	#include <string>
 
-	public:
-		Validation();
+	class Validation
+	{
 
-		int			get() const;
-		std::string	getErrMsg() const;
-	
-		Validation& check(std::string value);
-		Validation& isNotEmpty();
-		Validation& isNumeric();
-		Validation& isAlnum();
-		Validation& isSpace();
+		public:
+			Validation();
 
-	private:
-		int			_is_valid;
-		std::string	_err_msg;
-		std::string	_value;
+			int			get() const;
+			std::string	getErrMsg() const;
+		
+			Validation& check(std::string value);
+			Validation& isNotEmpty();
+			Validation& isNumeric();
+			Validation& isAlnum();
+			Validation& isSpace();
 
-};
+		private:
+			int			_is_valid;
+			std::string	_err_msg;
+			std::string	_value;
+
+	};
+
+#endif

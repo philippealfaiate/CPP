@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:25:54 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:46:07 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 19:01:19 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,16 @@ void	Ui::prompt() const {
 }
 
 void	Ui::header() const {
-	std::cout << "Adding a new child instance ..." << std::endl;
+	std::cout << "############################################################" << std::endl;
+	std::cout << "#                                                          #" << std::endl;
+	std::cout << "#                      PHONEBOOK 80's                      #" << std::endl;
+	std::cout << "#                                                          #" << std::endl;
+	std::cout << "############################################################" << std::endl;
+	return ;
+}
+
+void	Ui::title(std::string value) const {
+	std::cout << value << std::endl;
 	return ;
 }
 

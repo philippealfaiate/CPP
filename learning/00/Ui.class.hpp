@@ -6,25 +6,31 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:23:02 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:39:06 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:56:59 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef _UI_H_
+#define _UI_H_
 
-class Ui
-{
+	#include <iostream>
 
-	public:
+	class Ui
+	{
 
-		Ui();
-		~Ui();
-		void	clearScreen() const;
-		void	prompt() const;
-		void	header() const;
-		void	label(std::string value, std::string err_msg = 0) const;
+		public:
 
-	private:
-		void	printError(std::string msg) const;
+			Ui();
+			~Ui();
+			void	clearScreen() const;
+			void	prompt() const;
+			void	header() const;
+			void	title(std::string value) const;
+			void	label(std::string value, std::string err_msg) const;
 
-};
+		private:
+			void	printError(std::string msg) const;
+
+	};
+
+#endif

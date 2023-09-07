@@ -6,15 +6,15 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:03:51 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:26:26 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:56:01 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef CHILD_CLASS_H
-# define CHILD_CLASS_H
+#define CHILD_CLASS_H
 
-# include <string>
+	#include <string>
 
 	class Child
 	{
