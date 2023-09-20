@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:49:19 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/01 00:53:50 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:11:58 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PhoneBook {
 
 private:
 
-	int		_id;
+	// int		_id;
 	Contact	_contact[8];
 
 public:

@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 23:22:20 by phialfai          #+#    #+#             */
-/*   Updated: 2023/08/30 12:43:34 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:05:37 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	main(int argc, char *argv[])
 			(*argv)++;
 		}
 		if (*(argv + 1))
-			std::cout << std::endl;
+			std::cout << std::flush;
 		argv++;
 	}
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << '\n';
+	std::cout << std::endl;
 	return (0);
 }
