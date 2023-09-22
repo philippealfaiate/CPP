@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:05:49 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 13:44:26 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/22 19:16:03 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	Child::add() {
 	// First Name
 	while(1)
 	{
-		ui.clearScreen();
-		ui.header();
+		// ui.clearScreen();
+		// ui.header();
 		ui.label("First Name: ", validate.getErrMsg());
 		// if (!validate.get())
 		// 	ui.printError(validate.getErrMsg());
-		ui.prompt();
+		ui.prompt("");
 		std::getline(std::cin, value);
 		if (std::cin.good() && validate.check(value).isNotEmpty().get())
 		{
@@ -85,7 +85,7 @@ void	Child::add() {
 		ui.label("Last Name: ", validate.getErrMsg());
 		// if (!validate.get())
 		// 	ui.printError(validate.getErrMsg());
-		ui.prompt();
+		ui.prompt("");
 		std::getline(std::cin, value);
 		if (std::cin.good() && validate.check(value).isNotEmpty().get())
 		{
@@ -104,7 +104,7 @@ void	Child::add() {
 		ui.label("Age: ", validate.getErrMsg());
 		// if (!validate.get())
 		// 	ui.printError(validate.getErrMsg());
-		ui.prompt();
+		ui.prompt("");
 		std::getline(std::cin, value);
 		if (std::cin.good() && validate.check(value).isNotEmpty().isNumeric().get())
 		{
