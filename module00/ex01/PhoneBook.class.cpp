@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:36:56 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/01 00:55:01 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:19:31 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,45 @@
 
 PhoneBook::PhoneBook( void ) {
 	
-	// Do Something
-	header();
+	int	limit = 3;
+
+	std::string	value;
+
+
 	std::cout << "Welcome to the best PhoneBook 80's application" << std::endl;
-	helper();
+	std::cout << "Type ADD | SEARCH | EXIT" << std::endl;
+
+	this->_id = 0;
+
+	while (1)
+	{
+		std::cout << "$ > ";
+		std::getline(std::cin, value);
+		if (std::cin.good() && value == "ADD")
+		{
+			if (this->_id > limit - 1)
+			{
+				std::cout << "Override id " << (this->_id % limit) << "? (Y|n) > ";
+				std::getline(std::cin, value);
+				if (std::cin.good() && value == "n")
+					break ;
+			}
+			std::cout << "ADD: " << (this->_id % limit) << " / " << this->_id << std::endl;
+			this->_id++;
+		}
+		if (std::cin.good() && value == "SEARCH")
+			std::cout << "SEARCH" << std::endl;
+		if (std::cin.good() && value == "EXIT")
+			break ;
+	}
+
 	return;
 }
 
 PhoneBook::~PhoneBook( void ) {
 	
-	// Do Something
+	
+	std::cout << "Bye! :)" << this->_id <<std::endl;
 	return;
 }
 
