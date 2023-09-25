@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:36:56 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/25 18:29:37 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:44:01 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,30 @@
 #include "utils.hpp"
 
 PhoneBook::PhoneBook( void ) {
+
+	this->_id = 0;
+
+	this->welcome();
+
+
+	return;
+}
+
+PhoneBook::~PhoneBook( void ) {
 	
+	
+	std::cout << "Bye! :)" << this->_id <<std::endl;
+	return;
+}
+
+
+void	PhoneBook::welcome( void )
+{
 	int	limit = 3;
-
 	std::string	value;
-
 
 	std::cout << "Welcome to the best PhoneBook 80's application" << std::endl;
 	std::cout << "Type ADD | SEARCH | EXIT" << std::endl;
-
-	this->_id = 0;
 
 	while (1)
 	{
@@ -56,12 +70,6 @@ PhoneBook::PhoneBook( void ) {
 	return;
 }
 
-PhoneBook::~PhoneBook( void ) {
-	
-	
-	std::cout << "Bye! :)" << this->_id <<std::endl;
-	return;
-}
 
 void	PhoneBook::add ( void ) {
 

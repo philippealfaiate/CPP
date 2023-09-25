@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:49:19 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:20 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:39:16 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ public:
 	
 	/** Desctructor */
 	~PhoneBook( void );
+
+	/** */
+	void	welcome( void );
 
 	/** member function: Add Contact */
 	void	add( void );
