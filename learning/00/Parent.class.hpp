@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:39:27 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 18:55:51 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:40:44 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@
 			~Parent();
 
 			void AddChild(int id);
+			void ChildList() const;
 
 		private:
 
-			Child		child_instance[3];
+			Child		child_instance[8];
 	};
 
 #endif

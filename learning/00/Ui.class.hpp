@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:23:02 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/22 19:13:51 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:25:20 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 			void	header() const;
 			void	home() const;
 			void	add() const;
+			void	search() const;
 			void	title(std::string value) const;
 			void	label(std::string value, std::string err_msg) const;
 

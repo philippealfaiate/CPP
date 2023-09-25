@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:25:54 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/22 19:13:33 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:41:37 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,37 @@ void	Ui::prompt(std::string label) const {
 }
 
 void	Ui::header() const {
-	std::cout << "############################################################" << std::endl;
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "#                      PHONEBOOK 80's                      #" << std::endl;
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "############################################################" << std::endl;
+	std::cout << "#############################################" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "#              PHONEBOOK  80's              #" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "#############################################" << std::endl;
 	return ;
 }
 
 void	Ui::add() const {
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "# Adding new contact                                       #" << std::endl;
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "############################################################" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "# Adding new contact                        #" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "#############################################" << std::endl;
+	return ;
+}
+
+void	Ui::search() const {
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "# Searching a contact                       #" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "#############################################" << std::endl;
 	return ;
 }
 
 void	Ui::home() const {
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "# type ADD:    to add a new contact                        #" << std::endl;
-	std::cout << "# type SEARCH: to get contact's info                       #" << std::endl;
-	std::cout << "# type EXIT:   to exit phonebook                           #" << std::endl;
-	std::cout << "#                                                          #" << std::endl;
-	std::cout << "############################################################" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "# type ADD:    to add a new contact         #" << std::endl;
+	std::cout << "# type SEARCH: to get contact's info        #" << std::endl;
+	std::cout << "# type EXIT:   to exit phonebook            #" << std::endl;
+	std::cout << "#                                           #" << std::endl;
+	std::cout << "#############################################" << std::endl;
 	return ;
 }
 

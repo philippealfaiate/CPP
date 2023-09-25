@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:05:49 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/22 19:16:03 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:09:12 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,34 @@ std::string	Child::getName() const {
 	return this->_first_name + " " + this->_last_name;
 };
 
+std::string	Child::getFirstName() const {
+	int	len;
+
+	len = this->_first_name.length();
+	if (len > 9)
+		return this->_first_name.substr(0, 9) + ".";
+	else
+		return std::string((10 - len), ' ') + this->_first_name;
+};
+
+std::string	Child::getLastName() const {
+	int	len;
+
+	len = this->_last_name.length();
+	if (len > 9)
+		return this->_last_name.substr(0, 9) + ".";
+	else
+		return std::string((10 - len), ' ') + this->_last_name;
+};
+
 std::string	Child::getAge() const {
-	return this->_age;
+	int	len;
+
+	len = this->_age.length();
+	if (len > 9)
+		return this->_age.substr(0, 9) + ".";
+	else
+		return std::string((10 - len), ' ') + this->_age;
 };
 
 

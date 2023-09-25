@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:03:51 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/05 18:56:01 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:47:12 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 			void	print() const;
 			
 			std::string	getName() const;
+			std::string	getFirstName() const;
+			std::string	getLastName() const;
 			std::string	getAge() const;
 
 			void	add();
