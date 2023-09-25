@@ -6,7 +6,7 @@
 /*   By: phialfai <phialfai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:36:56 by phialfai          #+#    #+#             */
-/*   Updated: 2023/09/25 18:19:31 by phialfai         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:29:37 by phialfai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,26 @@ PhoneBook::PhoneBook( void ) {
 
 	while (1)
 	{
-		std::cout << "$ > ";
+		std::cout << "$home > ";
 		std::getline(std::cin, value);
 		if (std::cin.good() && value == "ADD")
 		{
+			std::cout << "$add > ";
 			if (this->_id > limit - 1)
 			{
 				std::cout << "Override id " << (this->_id % limit) << "? (Y|n) > ";
 				std::getline(std::cin, value);
 				if (std::cin.good() && value == "n")
-					break ;
+					continue ;
 			}
 			std::cout << "ADD: " << (this->_id % limit) << " / " << this->_id << std::endl;
 			this->_id++;
 		}
 		if (std::cin.good() && value == "SEARCH")
+		{
+			std::cout << "$search > ";
 			std::cout << "SEARCH" << std::endl;
+		}
 		if (std::cin.good() && value == "EXIT")
 			break ;
 	}
